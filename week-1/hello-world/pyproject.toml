@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "hello-world"
+version = "0.1.0"
+description = "Python Study Group"
+authors = ["rosera <askrichardrose@gmail.com>"]
+readme = "README.md"
+packages = [{include = "hello_world", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
