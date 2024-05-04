@@ -4,7 +4,7 @@ Study group for learning Python.
 
 ## Schedule 
 
-- [ ] [week-1:Project Structure]
+- [ ] [week-1:Project Structure](https://github.com/rosera/python-study-group/blob/main/week-1/README.md)
 
 
 ## Nix Configuration
