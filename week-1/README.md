@@ -3,17 +3,12 @@
 
 
 Make sure you have these tools installed on your machine or Cloud Shell Editor
-* Python 3
-* Pip
-* Venv
-* Pipx 
+* python3
+* pip
+* venv
+* pipx 
 
-Now install Poetry by running `pipx install poetry` in a terminal window. 
-After installing you may have to run `pipx ensurepath` to make the poetry 
-command available on your path, reload your shell profile or open a new 
-terminal window for the changes to take effect.
-
-> __Note:__ An alternative is to use a nix-shell that provides the required dev environment.
+> __Note:__ A nix-shell script is provided to setup the required dev environment.
 
 ```bash
 nix-shell --pure
