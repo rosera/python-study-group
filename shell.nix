@@ -1,20 +1,25 @@
 with import <nixpkgs> {};
 
-stdenv.mkDerivation {
+pkgs.mkShell {
   name = "python-study-group";
 
-  buildInputs = [
+  nativeBuildInputs = with pkgs; [
     git        # For version control (if needed)
-    python3   
-    python3.pkgs.pip 
-    python3.pkgs.virtualenv 
-    python3.pkgs.pipx 
-    python3.pkgs.poetry-core
+    python311Full   
+    python311Packages.pip
+    python311Packages.venvShellHook
+    python311Packages.pipx
+    poetry
   ];
+
+  LANGUAGE = "Python";
+  VERSION  = "python --version";
 
   shellHook = ''
     # Optional: Set up a virtual environment when entering the shell
     python3 -m venv .venv
     source .venv/bin/activate
+    echo "Welcome to $LANGUAGE Development Environment"
+    $VERSION
   '';
 }

@@ -21,27 +21,38 @@ The [nix](https://nixos.org/download/) configuration below provides:
 
 ### Python Study Group
 
-Configuration can be extended as required.
+1. To run:
+
+```bash
+nix-shell
+```
+
+2. Configuration can be extended as required.
 
 ```nix
 with import <nixpkgs> {};
 
-stdenv.mkDerivation {
+pkgs.mkShell {
   name = "python-study-group";
 
-  buildInputs = [
+  nativeBuildInputs = with pkgs; [
     git        # For version control (if needed)
-    python3
-    python3.pkgs.pip
-    python3.pkgs.virtualenv
-    python3.pkgs.pipx
+    python313   
+    python3.pkgs.pip 
+    python3.pkgs.virtualenv 
+    python3.pkgs.pipx 
     python3.pkgs.poetry-core
   ];
+
+  LANGUAGE = "Python";
+  VERSION  = "python --version";
 
   shellHook = ''
     # Optional: Set up a virtual environment when entering the shell
     python3 -m venv .venv
     source .venv/bin/activate
+    echo "Welcome to $LANGUAGE Development Environment"
+    $VERSION
   '';
 }
 ```
