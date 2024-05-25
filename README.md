@@ -23,5 +23,5 @@ The [nix](https://nixos.org/download/) configuration below provides:
 1. To run:
 
 ```bash
-nix-shell
+nix-shell --pure
 ```
